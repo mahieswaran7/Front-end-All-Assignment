@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            border: 2px solid black;
+            max-width: 280px;
+            color: red;
+            size: 25px;
+            display: block;
+            text-align: center;
+            font-size: 50px;
+            text-shadow: 3px 3px 3px black;
+            position: relative;
+            left: 30%;
+
+        }
+
+        .child {
+            text-align: center;
+            display: none;
+            
+        }
+
+        .parent:hover .child {
+            display: inline;
+color:blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        Hover on Me!!
+        <div class="child">
+            Welcome to changepond
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

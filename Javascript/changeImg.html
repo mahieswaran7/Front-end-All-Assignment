@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+
+    <div class="container">
+        <img src="./Assets/salad.jpg" alt="salad" id="img1" width="300px" height="300px">
+        <br>
+        <h3 id="imgname">Salad</h3>
+        
+        <button type="button" onclick="changeImg()">change Image</button>
+         
+    </div>
+
+    <script>
+          let isSalad = true;
+
+function changeImg() {
+    const img = document.getElementById("img1");
+    const imgName = document.getElementById("imgname");
+
+    if (isSalad) {
+        img.src = "./Assets/pizza.jpg";
+        imgName.innerHTML = "Pizza";
+    } 
+    else {
+        img.src = "./Assets/salad.jpg";
+        imgName.innerHTML = "Salad";
+    }
+
+    isSalad = !isSalad;
+      }
+            
+    </script>
+    
+</body>
+</html>

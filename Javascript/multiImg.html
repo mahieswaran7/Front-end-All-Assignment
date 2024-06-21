@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="./Assets/pizza.jpg" alt="pizza" id="img" width="300px" height="300px">
+        <p id="imgname"></p>
+
+        <button type="button" onclick="image1()">Pizza</button>
+        <button type="button" onclick="image2()">Cake</button>
+        <button type="button" onclick="image3()">Biriyani</button>
+        <button type="button" onclick="image4()">Fish</button>
+        <button type="button" onclick="image5()">Grill</button>
+        <button type="button" onclick="image6()">Burger</button>
+    </div>
+
+    <script>
+        function image1(){
+            document.getElementById("img").src="./Assets/pizza.jpg";
+            document.getElementById("imgname").innerHTML="Pizza";
+        }
+        function image2(){
+            document.getElementById("img").src="./Assets/des.jpg";
+            document.getElementById("imgname").innerHTML="Cake";
+        }
+        function image3(){
+            document.getElementById("img").src="./Assets/nveg1.jpg";
+            document.getElementById("imgname").innerHTML="Biriyani";
+        }
+        function image4(){
+            document.getElementById("img").src="./Assets/nveg2.jpg";
+            document.getElementById("imgname").innerHTML="Fish";
+        }
+        function image5(){
+            document.getElementById("img").src="./Assets/nveg3.jpg";
+            document.getElementById("imgname").innerHTML="Grill";
+        }
+        function image6(){
+            document.getElementById("img").src="./Assets/snack3.jpg";
+            document.getElementById("imgname").innerHTML="Burger";
+        }
+    </script>
+    
+</body>
+</html>

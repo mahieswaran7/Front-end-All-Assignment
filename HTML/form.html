@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body {
+            background-color: rgb(153, 204, 204);
+        }
+
+        form {
+            width: 500px;
+            margin: auto;
+            border: 2px solid;
+            border-color: aquamarine;
+            text-align: center;
+            background-color: rgb(123, 221, 221);
+
+        }
+
+       
+    </style>
+</head>
+
+<body>
+
+    <form action="" method="post">
+        <h2>Registration Form</h2>
+        <div>
+            <!--First Name-->
+            <label for="fname">First Name: </label>
+            <input type="text" name="fname" id="fname" placeholder="Enter First Name" required="true" minlength="3"
+                maxlength="5" pattern="^[a-zA-Z ]{3,20}$"><br><br><br>
+        </div>
+        <div>
+            <!--Password-->
+            <label for="upass">Enter Password:</label>
+            <input type="password" name="pass" id="upass" required="true" pattern="^[a-z0-9]{5,20}$"><br><br><br>
+
+        </div>
+        <div>
+            <!--Email-->
+            <label for="email"> Enter Email</label>
+            <input type="email" name="emailid" id="email" required="true"><br><br><br>
+        </div>
+        <div>
+            <!--Contact-->
+            <label for="contact"> Enter Contact:</label>
+            <input type="tel" name="con" id="contact" required> <br><br> <br>
+        </div>
+        <div>
+            <!--DOB-->
+            <label for="dob">Enter DOB:</label>
+            <input type="date" name="DOB" id="dob" required="true"><br><br> <br>
+        </div>
+        <div>
+            <!--AGE-->
+            <label for="age">Select Age</label>
+            <input type="number" name="agee" id="age" required><br><br> <br>
+        </div>
+        <div>
+            <!--Gender-->
+            <label for="gen">Select Your Gender:</label>
+            <input type="radio" name="gender" id="gen" value="male">Male
+            <input type="radio" name="gender" id="gen" value="female">Female
+            <input type="radio" name="gender" id="gen" value="others">Others
+            <br><br> <br>
+        </div>
+        <div>
+            <!--Education-->
+            <label for="edu">Select your Checkbox</label>
+            <input type="checkbox" name="education" id="edu" value="ssc">SSC
+            <input type="checkbox" name="education" id="edu" value="hsc">HSC
+            <input type="checkbox" name="education" id="edu" value="ug">UG
+            <input type="checkbox" name="education" id="edu" value="pg">PG
+            <br><br> <br>
+        </div>
+        <div>
+            <!--Courses-->
+            <label for="courses">select your courses</label>
+            <select name="course" id="courses">
+                <option value="options">-Select-</option>
+                <option value="react"> REACT</option>
+                <option value="angular">ANGULAR</option>
+                <option value="java">JAVA</option>
+                <option value="python">PYTHON</option>
+            </select>
+            <br><br> <br>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

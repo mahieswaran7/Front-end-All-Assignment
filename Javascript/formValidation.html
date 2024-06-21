@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        .form-group .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+        }
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        .checkbox-group input[type="checkbox"],
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+        }
+        .btn {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+        .btn button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="myForm">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName">
+                <div class="error" id="firstNameError">First name must be 3 to 15 letters and contain no spaces or numbers.</div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName">
+                <div class="error" id="lastNameError">Last name must be 1 to 15 letters and contain no spaces or numbers.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="emailError">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile">
+                <div class="error" id="mobileError">Please enter a valid mobile number.</div>
+            </div>
+            <div class="form-group">
+                <label>Education Qualification</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="education" value="SSLC"> SSLC</label>
+                    <label><input type="checkbox" name="education" value="HSC"> HSC</label>
+                    <label><input type="checkbox" name="education" value="UG"> UG</label>
+                    <label><input type="checkbox" name="education" value="PG"> PG</label>
+                </div>
+                <div class="error" id="educationError">Please select at least one qualification.</div>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                </div>
+                <div class="error" id="genderError">Please select your gender.</div>
+            </div>
+            <div class="btn">
+                <button type="button" onclick="validateForm()">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // First Name validation
+            const firstName = document.getElementById('firstName').value;
+            const firstNameError = document.getElementById('firstNameError');
+            if (!/^[a-zA-Z]{3,15}$/.test(firstName)) {
+                firstNameError.style.display = 'block';
+                isValid = false;
+            } else {
+                firstNameError.style.display = 'none';
+            }
+
+            // Last Name validation
+            const lastName = document.getElementById('lastName').value;
+            const lastNameError = document.getElementById('lastNameError');
+            if (!/^[a-zA-Z]{1,15}$/.test(lastName)) {
+                lastNameError.style.display = 'block';
+                isValid = false;
+            } else {
+                lastNameError.style.display = 'none';
+            }
+
+            // Email validation
+            const email = document.getElementById('email').value;
+            const emailError = document.getElementById('emailError');
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            // Mobile Number validation
+            const mobile = document.getElementById('mobile').value;
+            const mobileError = document.getElementById('mobileError');
+            if (!/^\d{10}$/.test(mobile)) {
+                mobileError.style.display = 'block';
+                isValid = false;
+            } else {
+                mobileError.style.display = 'none';
+            }
+
+            // Education validation
+            const education = document.querySelectorAll('input[name="education"]:checked');
+            const educationError = document.getElementById('educationError');
+            if (education.length === 0) {
+                educationError.style.display = 'block';
+                isValid = false;
+            } else {
+                educationError.style.display = 'none';
+            }
+
+            // Gender validation
+            const gender = document.querySelectorAll('input[name="gender"]:checked');
+            const genderError = document.getElementById('genderError');
+            if (gender.length === 0) {
+                genderError.style.display = 'block';
+                isValid = false;
+            } else {
+                genderError.style.display = 'none';
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                document.getElementById('myForm').reset();
+            }
+        }
+    </script>
+</body>
+</html>

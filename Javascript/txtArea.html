@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 2px solid orange;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <input type="textarea" name="txt1" id="txt1" placeholder="Enter any text"> <br> <br>
+     <button type="button" onclick="textcopy()">click me</button> <br> <br>
+     <input type="textarea" name="txt2" id="txt2">
+</div>
+    
+
+  <script>
+    function textcopy(){
+        var text=document.getElementById("txt1").value;
+
+        document.getElementById("txt2").value=text;
+    }
+  </script>
+</body>
+</html>

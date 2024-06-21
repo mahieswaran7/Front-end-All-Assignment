@@ -1,0 +1,82 @@
+body {
+    background-color: #f8f9fa;
+}
+.about-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+.about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.about-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/*Feedback Style*/
+
+.feedback-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+.feedback-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.feedback-card {
+    margin-bottom: 20px;
+}
+.feedback-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.feedback-client {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/*Feedback Ends*/
+
+
+/*Partners Start*/
+
+.partner-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    text-align: center;
+}
+.partner-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.partner-marquee {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.partner-img {
+    border-radius: 50%;
+    margin: 0 15px;
+    max-height: 100px;
+    max-width: 100px;
+}
+
+
+
+/*Partner Ends*/

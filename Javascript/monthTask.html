@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+    <div id="d7"></div>
+    <div id="d8"></div>
+    <div id="d9"></div>
+    <div id="d10"></div>
+    <div id="d11"></div>
+    <div id="d12"></div>
+
+    <script>
+
+        let dateObj=new Date();
+
+     //   document.getElementById("d1").innerHTML=dateObj.getFullYear();
+     //   document.getElementById("d2").innerHTML=dateObj.getMonth();
+
+        let Month=dateObj.getMonth();
+
+        switch(Month){
+            case 0:{
+                document.getElementById("d2").innerHTML=" This is January month";
+                break;
+            }
+            case 1:{
+                document.getElementById("d2").innerHTML=" This is February Month";
+                break;
+            }
+            case 2:{
+                document.getElementById("d2").innerHTML=" This is March Month";
+                break;
+            }
+            case 3:{
+                document.getElementById("d2").innerHTML=" This is  April Month";
+                break;
+            }
+            case 4:{
+                document.getElementById("d2").innerHTML=" This is May Month";
+                break;
+            }
+            case 5:{
+                document.getElementById("d2").innerHTML=" This is June Month";
+                break;
+            }
+            case 6:{
+                document.getElementById("d2").innerHTML=" This is July Month";
+                break;
+            }
+            case 7:{
+                document.getElementById("d2").innerHTML=" This is August Month";
+                break;
+            }
+            case 8:{
+                document.getElementById("d2").innerHTML=" This is September Month";
+                break;
+            }
+            case 9:{
+                document.getElementById("d2").innerHTML=" This is October Month";
+                break;
+            }
+            case 10:{
+                document.getElementById("d2").innerHTML=" This is November Month";
+                break;
+            }
+            case 11:{
+                document.getElementById("d2").innerHTML=" This is December Month";
+                break;
+            }
+        }
+
+        
+
+
+    </script>
+    
+</body>
+</html>

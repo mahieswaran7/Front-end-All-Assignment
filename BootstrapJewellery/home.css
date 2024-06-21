@@ -1,0 +1,172 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(./Assets/silver1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+}
+/* Header style starts here */
+.header-container {
+    background-color: #343a40; /* Dark color for the header */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    height: 80px;
+    width: auto;
+}
+.shop-name {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    color: #fff; /* White color for the shop name */
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    max-width: 400px; /* Limiting the maximum width of the search bar for better responsiveness */
+    margin-left: auto; /* Pushing the search bar to the right */
+}
+.search-bar input {
+    flex: 1; /* Allow the input to expand and fill available space */
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+.search-bar input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.search-bar button {
+    border-radius: 50px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.search-bar button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+@media (max-width: 576px) {
+    .search-bar {
+        max-width: 100%; /* Allow the search bar to take full width on small screens */
+    }
+    .search-bar input {
+        width: calc(100% - 100px); /* Adjust input width for better layout on small screens */
+    }
+    .search-bar button {
+        margin-left: 10px; /* Add margin for better spacing */
+        width: 100px; /* Set fixed width for the button */
+    }
+}
+
+/*nav style start*/
+  
+
+/*nav style end*/
+
+
+/*carousel*/
+ .carousel-inner img{
+    width: 800px;
+    height: 750px;
+ }
+/*carousel end*/
+
+
+/*model and message*/
+
+.celebrity-box {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    
+  }
+  .celebrity-box p{
+    
+    text-align: justify;
+  }
+  .celebrity-img {
+    width: 500px;
+    height:500px;
+  }
+
+/*model and message*/
+
+/*PNG section*/
+
+.promises-section {
+    background-color: #4B306A;
+    color: white;
+    padding: 20px 0;
+    margin-top: 5%;
+  }
+  .promises-section .promise {
+    text-align: center;
+    padding: 10px;
+  }
+  .promises-section .promise i {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  /*
+  .promises-section .promise i:hover{
+    color: yellow;
+  }  */
+  .promises-section .promise p {
+    margin: 0;
+  }
+ /* .promises-section .promise p:hover{
+    color: yellow;
+  } */
+
+  .col:hover{
+    color: yellow;
+    cursor: pointer;
+  }
+
+
+
+  @media (max-width: 767.98px) {
+    .promises-section .row {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .promises-section .promise {
+      min-width: 120px;
+      flex: 0 0 auto;
+    }
+  }
+
+
+
+/*PNG section End*/
+
+/*Footer*/
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+}
+.footer .social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+}
+.footer .social-icons a:hover {
+  color: #d4af37; /* Gold color for hover */
+}
+  
+/*Footer*/

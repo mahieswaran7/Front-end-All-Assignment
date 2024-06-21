@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Calculator App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Multi-Calculator App</h1>
+        
+        <div id="normalCalculator" class="calculator-container active calculator-box">
+            <h2>Normal Calculator</h2>
+            <input type="text" id="display" class="form-control mb-3" readonly>
+            <div class="button-grid">
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('7')">7</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('8')">8</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('9')">9</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('/')">/</button>
+                
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('4')">4</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('5')">5</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('6')">6</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('*')">*</button>
+                
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('1')">1</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('2')">2</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('3')">3</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('-')">-</button>
+                
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('0')">0</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('.')">.</button>
+                <button class="btn btn-outline-dark" onclick="calculateResult()">=</button>
+                <button class="btn btn-outline-dark" onclick="appendToDisplay('+')">+</button>
+
+                <button class="btn btn-outline-warning" onclick="sqrt()">√</button>
+                <button class="btn btn-outline-info" onclick="clearDisplay()">C</button>
+                <button class="btn btn-outline-secondary" onclick="backspace()">⌫</button>
+                <!-- <button class="btn btn-outline-primary" onclick="calculateResult()">%</button> -->
+                <button class="btn btn-outline-dark" onclick="calculatepercentage()">%</button>
+            </div>
+        </div>
+        
+        <div id="currencyConverter" class="calculator-container calculator-box">
+            <h2>Currency Converter</h2>
+            <div class="form-group">
+                <label for="currencyAmount">Amount:</label>
+                <input type="number" id="currencyAmount" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="currencyFrom">From:</label>
+                <select id="currencyFrom" class="form-control">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="INR">INR</option>
+                    <option value="AED">AED</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="currencyTo">To:</label>
+                <select id="currencyTo" class="form-control">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="INR">INR</option>
+                    <option value="AED">AED</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="convertCurrency()">Convert</button>
+            <div id="currencyResult" class="mt-3"></div>
+        </div>
+        
+        <div id="temperatureConverter" class="calculator-container calculator-box">
+            <h2>Temperature Converter</h2>
+            <div class="form-group">
+                <label for="temperatureInput">Temperature:</label>
+                <input type="number" id="temperatureInput" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="temperatureScale">Convert to:</label>
+                <select id="temperatureScale" class="form-control">
+                    <option value="C">Celsius</option>
+                    <option value="F">Fahrenheit</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="convertTemperature()">Convert</button>
+            <div id="temperatureResult" class="mt-3"></div>
+        </div>
+        
+        <div id="weightConverter" class="calculator-container calculator-box">
+            <h2>Weight Converter</h2>
+            <div class="form-group">
+                <label for="weightInput">Weight:</label>
+                <input type="number" id="weightInput" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="weightFrom">From:</label>
+                <select id="weightFrom" class="form-control">
+                    <option value="kg">Kilograms</option>
+                    <option value="lb">Pounds</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="weightTo">To:</label>
+                <select id="weightTo" class="form-control">
+                    <option value="kg">Kilograms</option>
+                    <option value="lb">Pounds</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="convertWeight()">Convert</button>
+            <div id="weightResult" class="mt-3"></div>
+        </div>
+        
+        <div id="percentageCalculator" class="calculator-container calculator-box">
+            <h2>Percentage Calculator</h2>
+            <div class="form-group">
+                <label for="percentageValue">Value:</label>
+                <input type="number" id="percentageValue" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="percentageRate">Percentage:</label>
+                <input type="number" id="percentageRate" class="form-control">
+            </div>
+            <button class="btn btn-primary" onclick="calculatePercentage()">Calculate</button>
+            <div id="percentageResult" class="mt-3"></div>
+        </div>
+        
+        <div id="ageCalculator" class="calculator-container calculator-box">
+            <h2>Age Calculator</h2>
+            <div class="form-group">
+                <label for="birthDate">Birth Date:</label>
+                <input type="date" id="birthDate" class="form-control">
+            </div>
+            <button class="btn btn-primary" onclick="calculateAge()">Calculate</button>
+            <div id="ageResult" class="mt-3"></div>
+        </div>
+
+        <div class="text-center nav-container">
+            <button class="btn btn-primary nav-button" onclick="showCalculator('normalCalculator')">Normal Calculator</button>
+            <button class="btn btn-secondary nav-button" onclick="showCalculator('currencyConverter')">Currency Converter</button>
+            <button class="btn btn-success nav-button" onclick="showCalculator('temperatureConverter')">Temperature Converter</button>
+            <button class="btn btn-danger nav-button" onclick="showCalculator('weightConverter')">Weight Converter</button>
+            <button class="btn btn-warning nav-button" onclick="showCalculator('percentageCalculator')">Percentage Calculator</button>
+            <button class="btn btn-info nav-button" onclick="showCalculator('ageCalculator')">Age Calculator</button>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
